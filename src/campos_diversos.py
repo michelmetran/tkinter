@@ -8,11 +8,6 @@ from tkinter.messagebox import showinfo
 from time import strftime, localtime
 
 root = Tk()
-root.title('Calculadora')
-root['bg'] = 'white'  # Background
-root.geometry('300x300+100+100')  # Largura x Altura + Distância da Esq + Distância do Topo
-root.geometry('300x300')  # Largura x Altura
-
 
 def clicked():
     time = strftime('Day: %d.%m.%Y\nTime: %H:%M:%S\n', localtime())

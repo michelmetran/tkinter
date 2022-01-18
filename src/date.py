@@ -10,7 +10,7 @@ from time import strftime, strptime
 root = Tk()
 root.title('Calculadora')
 root['bg'] = 'white'  # Background
-root.geometry('300x300+100+100')  # Largura x Altura + Distância da Esq + Distância do Topo
+
 root.geometry('300x300')  # Largura x Altura
 
 

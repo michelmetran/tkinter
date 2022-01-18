@@ -6,24 +6,13 @@ from tkinter import *
 from tkinter import filedialog
 from time import strftime, localtime
 
-
 # --------------------------------------------
-def browse_files():
-    """
-    # Function for opening the file explorer window
-    :return:
-    """
-    filename = filedialog.askopenfilename(
-        initialdir='/',
-        title='Selecionar arquivo zipado (.zip)',
-        filetypes=(('Zip files', '*.zip*'), ('All files', '*.*'))
-    )
-
 
 root = Tk()  # Create the root window
 # root.withdraw()
 root.title('Título da Janela')  # Set window title
 # root.geometry('700x350')  # Set window size
+# root.geometry('300x300+100+100')  # Largura x Altura + Distância da Esq + Distância do Topo
 root.config(background='white')  # Set window background color
 
 # --------------------------------------------
@@ -81,7 +70,6 @@ label_4.grid(
 
 # --------------------------------------------
 
-
 def get_folder_path():
     folder_path = StringVar()
     folder_selected = filedialog.askdirectory(
@@ -100,8 +88,6 @@ Button(
     command=get_folder_path,
 ).grid(row=5, column=1, padx=10, pady=10)
 
-# print(folder_path)
-
 # Label
 label_5 = Label(root, text='Irá ter a data/hora (Label 5)')
 label_5.config(bg='white', fg='black')
@@ -111,6 +97,71 @@ label_5.grid(
     padx=10,
     pady=10
 )
+
+# --------------------------------------------
+
+# Label
+label_6 = Label(root, text='---------- Label 6 ----------')
+label_6.config(bg='white', fg='black')
+label_6.grid(
+    row=6,
+    # column=1,
+    # rowspan=3,
+    columnspan=3,
+)
+
+
+# --------------------------------------------
+
+def browse_files():
+    """
+    # Function for opening the file explorer window
+    :return:
+    """
+    filename = filedialog.askopenfilename(
+        initialdir='/',
+        title='Selecionar arquivo zipado (.zip)',
+        filetypes=(('Zip files', '*.zip'), ('All files', '*.*'))
+    )
+    # Change label contents
+    label_7.configure(text='File Opened: {}'.format(filename))
+
+
+# Button
+Button(
+    root,
+    text='Selecionar Arquivo',
+    height=2,
+    command=browse_files,
+    font=('Helvetica 13 bold'),
+).grid(row=7, column=1, padx=10, pady=10)
+
+# Create a File Explorer label
+label_7 = Label(
+    root,
+    text='File Explorer using Tkinter',
+    # width=100,
+    background='green',
+    foreground='blue',
+    height=2,
+)
+label_7.grid(row=7, column=2, padx=10, pady=10)
+
+# Exit
+btn_exit = Button(
+    root,
+    text='Exit',
+    command=exit
+)
+btn_exit.grid(
+    row=10,
+    # column=1,
+    columnspan=3,
+    padx=10,
+    pady=10
+)
+
+
 
 # Loop
 root.mainloop()
