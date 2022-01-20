@@ -11,6 +11,7 @@ from time import strftime, localtime
 root = Tk()  # Create the root window
 # root.withdraw()
 root.title('Título da Janela')  # Set window title
+#root.iconbitmap('../data/giphy.gif')
 # root.geometry('700x350')  # Set window size
 # root.geometry('300x300+100+100')  # Largura x Altura + Distância da Esq + Distância do Topo
 root.config(background='white')  # Set window background color

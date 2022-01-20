@@ -3,15 +3,8 @@
 
 
 from tkinter import *
-from tkinter import Tk
-from tkinter.messagebox import showinfo
-from time import strftime, localtime
 
 root = Tk()
-
-def clicked():
-    time = strftime('Day: %d.%m.%Y\nTime: %H:%M:%S\n', localtime())
-    showinfo(message=time)
 
 
 def btn_click():
@@ -39,8 +32,8 @@ receiver_email = Entry(root, bd=2)
 receiver_email.pack(fill=X)
 
 # Receiver e-mail
-# btn = Button(root, text='Ok', command=btn_click)
-btn = Button(root, text='Ok', command=clicked)
+btn = Button(root, text='Ok', command=btn_click)
+# btn = Button(root, text='Ok', command=clicked)
 btn.pack()
 btn_text = Label(root, text='Não clicado inicialmente')
 btn_text.pack()
